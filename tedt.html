@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>CoinPay Оплата</title>
+ <style>
+  body {
+    background: linear-gradient(135deg, blue, #ADD8E6, blue);
+    background-size: 400% 400%;
+    animation: gradientBG 5s ease infinite;
+    font-family: Arial, sans-serif;
+  }
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .button-center {
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 10px 50px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .copySection, .copySection1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin-top: 10px;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .copySection div, .copySection1 div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  hr {
+    border: 1px solid #333;
+  }
+  input[type="text"] {
+    border: 0px solid #CCC;
+    border-radius: 1px;
+    padding: 6px;
+    width: 90%;
+  }
+  button {
+    border: 1px solid white;
+    padding: 5px 10px;
+  }
+ </style>
+</head>
+<body>
+ <h1 style="text-align: center; color: #333;">CoinPay</h1>
+ <p style="text-align: center; font-style: italic; color: #555;">Оплата подтверждения аккаунта</p>
+ <hr>
+ <p style="text-align: center;">Оплачивайте счет по выданным реквизитам для зачисления платежа</p>
+ <div class="copySection">
+  <div>
+    <label for="field1">Номер получателя</label>
+    <input type="text" value="+7999999999" id="field1" readonly>
+  </div>
+  <button onclick="copyToClipboard('field1')">📋</button>
+ </div><br><br>
+ <div class="copySection">
+  <div>
+    <label for="field2">Банк получателя</label>
+    <input type="text" value="Озон Банк" id="field2" readonly>
+  </div>
+  <button onclick="copyToClipboard('field2')">📋</button>
+ </div><br><br>
+ <div class="copySection1">
+  <div>
+    <label for="field3">Сумма платежа</label>
+    <input type="text" value="666₽" id="field3" readonly>
+  </div>
+  <button onclick="copyToClipboard('field3')">📋</button>
+ </div><br><br>
+ <button class="button-center" onclick="window.location.href = 'https://t.me/Clickemoneybot';">Оплата отправлена</button>
+ <hr>
+ <p style="text-align: center; color: #666;">Все права защищены. CoinPay 2019-2024</p>
+
+ <script>
+  function copyToClipboard(elementId) {
+   var copyText = document.getElementById(elementId);
+   copyText.select();
+   document.execCommand("copy");
+  }
+ </script>
+</body>
+</html>
